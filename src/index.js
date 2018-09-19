@@ -1,14 +1,12 @@
 module.exports = function solveEquation(equation) {
- 
-// example: 2 * x^2 - 10 * x + 12
+
+// identifying variables in string:
 
 var count = 0;
 
 for (var i = 0; i < equation.length; i++) {
     
     if (equation[i] == ' ') { count++ }	
-	
-	
 	
 	if (equation[i] == ' ' && count == 1) {
         
@@ -38,21 +36,18 @@ for (var i = 0; i < equation.length; i++) {
 	var cStrFull = equation.slice(cStrStart, cStrEnd);
 	var c = parseInt(cStrFull.replace(' ', ''));
 	
-	console.log(a,b,c);
 	
-	// finding returns:
+	// performing calculation:
 	
 	var d = Math.pow(b, 2) - 4 * a * c;
 	
 	var answer_1 = Math.round((-b +Math.sqrt(d)) / (2 * a));
-	
 	var answer_2 = Math.round((-b -Math.sqrt(d)) / (2 * a));
 	
-	console.log(answer_1, answer_2);
 	
-	// sorting
+	// performing sorting and returning values:
 	
-	var response = [answer_1, answer_2].sort();
+	var response = [answer_1, answer_2].sort(function(a,b){return a - b});
 	
 	return response;
 
