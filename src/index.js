@@ -44,9 +44,9 @@ for (var i = 0; i < equation.length; i++) {
 	
 	var d = Math.pow(b, 2) - 4 * a * c;
 	
-	var answer_1 = (-b +Math.sqrt(d)) / (2 * a);
+	var answer_1 = Math.round((-b +Math.sqrt(d)) / (2 * a));
 	
-	var answer_2 = (-b -Math.sqrt(d)) / (2 * a);
+	var answer_2 = Math.round((-b -Math.sqrt(d)) / (2 * a));
 	
 	console.log(answer_1, answer_2);
 	
